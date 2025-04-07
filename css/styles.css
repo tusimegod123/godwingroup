@@ -1,0 +1,288 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fcf8ed;
+  color: #1a1a1a;
+  padding-top: 80px;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+.btn-godwin {
+  background-color: #1b4d3e;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-godwin:hover {
+  background-color: #b65b1f;
+  color: white;
+}
+.btn-outline-success {
+  color: #1b4d3e;
+}
+.btn-outline-success:hover {
+  background-color: #1b4d3e;
+  color: white;
+}
+
+.section-title,
+#join-our-team {
+  color: #b65b1f;
+  letter-spacing: 2px;
+}
+
+.card img {
+  object-fit: contain;
+  height: 100%;
+}
+
+footer {
+  background-color: #1b4d3e;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-icons svg {
+  height: 24px;
+  margin: 0 10px;
+}
+
+.navbar-transparent {
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-scrolled {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas.offcanvas-end {
+  background-color: #1b4d3e;
+}
+
+@media (max-width: 768px) {
+  .offcanvas.offcanvas-end {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100%;
+    border: none;
+  }
+}
+
+.form-check-input {
+  background-color: #ccc;
+  border-color: #ccc;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form-check-input:hover {
+  box-shadow: 0 0 0 0.2rem rgba(27, 77, 62, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #b65b1f;
+  border-color: #b65b1f;
+}
+
+@media (max-width: 576px) {
+  .form-check.form-switch {
+    margin-top: 1rem;
+  }
+}
+
+/* NAVBAR LINK COLOR FIX FOR LIGHT + DARK MODE */
+.navbar .nav-link,
+.navbar .text-link-fix {
+  color: white !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover,
+.navbar .text-link-fix:hover {
+  color: #b65b1f !important;
+  text-decoration: none;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode footer {
+  background-color: #000;
+  color: #fff;
+}
+
+body.dark-mode a,
+body.dark-mode .form-check-label {
+  color: #1b4d3e;
+}
+
+body.dark-mode .btn-godwin {
+  background-color: #ffffff;
+  color: #1b4d3e;
+}
+
+body.dark-mode .btn-godwin:hover {
+  background-color: #b65b1f;
+  color: #ffffff;
+}
+
+body.dark-mode .section-title,
+body.dark-mode #join-our-team {
+  color: #1b4d3e;
+}
+
+body.dark-mode #modeLabel {
+  color: #f1f1f1;
+}
+
+body.dark-mode .navbar-scrolled {
+  background-color: #121212 !important;
+}
+
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar .text-link-fix,
+body.dark-mode .navbar .btn,
+body.dark-mode .navbar,
+body.dark-mode .navbar .form-check-label,
+body.dark-mode .navbar .form-check-input,
+body.dark-mode .navbar .btn-outline-dark {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background-color: #121212;
+}
+
+body.dark-mode .offcanvas {
+  background-color: #121212 !important;
+}
+
+body.dark-mode .offcanvas .nav-link,
+body.dark-mode .offcanvas .form-check-label {
+  color: #f1f1f1 !important;
+}
+
+body.dark-mode svg text {
+  fill: #ffffff !important;
+}
+
+svg path,
+svg circle,
+svg rect {
+  transition: fill 0.3s ease, stroke 0.3s ease;
+}
+/* Fix default blue active/visited link inside navbar */
+.navbar a {
+  color: #1b4d3e;
+}
+.navbar a:visited,
+.navbar a:active {
+  /* color: #1b4d3e !important; */
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #b65b1f !important;
+}
+
+/* Dark mode override */
+body.dark-mode .navbar a,
+body.dark-mode .navbar a:visited,
+body.dark-mode .navbar a:active {
+  color: #ffffff !important;
+}
+
+body.dark-mode .navbar a:hover {
+  color: #b65b1f !important;
+}
+/* Ensure 'Get In Touch' button has white text in light mode */
+.navbar .btn-godwin {
+  background-color: #1b4d3e;
+  color: #ffffff !important;
+}
+
+.navbar .btn-godwin:hover {
+  background-color: #b65b1f;
+  color: #ffffff !important;
+}
+.text-warning {
+  color: #1b4d3e;
+}
+.join-message {
+  color: #b65b1f; /* same as section-title for brand consistency */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.join-title {
+  font-size: 1.3rem;
+  color: #b65b1f;
+  /* display: block; */
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+body.dark-mode .join-title {
+  color: #ffffff;
+}
+
+body.dark-mode .join-message {
+  color: #f1f1f1;
+}
+
+.godwin-green {
+  color: #1b4d3e;
+}
+#building-h1 {
+  color: #1b4d3e;
+}
+#building-p {
+  color: #1b4d3e;
+}
+#empowering-h1 {
+  color: #1b4d3e;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  object-fit: contain;
+  height: 100%;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.testimonial {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}

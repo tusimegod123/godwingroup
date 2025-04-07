@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Godwin Group is a multi-sector business empowering communities with excellence in hospitality, housing, health, transport, and more."
+    />
+    <meta
+      name="keywords"
+      content="Godwin Group, Uganda, hospitality, housing, transport, clinic, hardware, restaurant, jobs, careers"
+    />
+    <title>Godwin Group | Empowering Dreams</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav
+      id="mainNavbar"
+      class="navbar navbar-expand-md fixed-top px-4 py-3 navbar-transparent"
+    >
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <svg
+            width="180"
+            height="40"
+            viewBox="0 0 300 80"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Godwin Group Logo"
+          >
+            <path
+              d="M30,40 a20,20 0 1,0 40,0"
+              fill="none"
+              stroke="#1b4d3e"
+              stroke-width="4"
+            />
+            <path
+              d="M30,40 a20,20 0 1,1 40,0"
+              fill="none"
+              stroke="#a76f1f"
+              stroke-width="4"
+            />
+            <circle cx="50" cy="40" r="4" fill="#1b4d3e" />
+            <text
+              x="90"
+              y="55"
+              font-family="'Playfair Display', serif"
+              font-size="36"
+              fill="#1b4d3e"
+              font-weight="800"
+            >
+              Godwin Group
+            </text>
+          </svg>
+        </a>
+
+        <!-- MOBILE ONLY: ☰ Button and Offcanvas -->
+        <div class="d-md-none">
+          <button
+            class="btn btn-outline-dark"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasMenu"
+          >
+            ☰
+          </button>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasMenu"
+            aria-labelledby="offcanvasMenuLabel"
+            data-bs-scroll="true"
+            data-bs-backdrop="true"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasMenuLabel"></h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column gap-3">
+              <a class="nav-link fw-semibold text-white" href="#">Home</a>
+              <a class="nav-link fw-semibold text-white" href="#about"
+                >About Us</a
+              >
+              <a class="nav-link fw-semibold text-white" href="#businesses"
+                >Our Businesses</a
+              >
+              <a class="nav-link fw-semibold text-white" href="#careers"
+                >Careers</a
+              >
+              <a class="btn btn-light text-dark fw-bold mt-3" href="#"
+                >Get In Touch</a
+              >
+
+              <!-- 🌗 Theme Toggle -->
+              <div
+                class="form-check form-switch ms-3 d-flex align-items-center gap-2"
+              >
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="modeToggleMobile"
+                  style="cursor: pointer; width: 2.5rem; height: 1.4rem"
+                />
+                <label
+                  class="form-check-label fw-semibold"
+                  for="modeToggleMobile"
+                  id="modeLabelMobile"
+                  style="color: white"
+                  >Light Mode</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESKTOP ONLY -->
+        <div class="d-none d-md-flex gap-4 align-items-center">
+          <a class="text-decoration-none fw-semibold" href="#">Home</a>
+          <a class="text-decoration-none fw-semibold" href="#about">About Us</a>
+          <a class="text-decoration-none fw-semibold" href="#businesses"
+            >Our Businesses</a
+          >
+          <a class="text-decoration-none fw-semibold" href="#careers"
+            >Careers</a
+          >
+          <a class="btn btn-godwin px-4 py-2 fw-bold" href="#">Get In Touch</a>
+
+          <!-- 🌗 Theme Toggle -->
+          <div
+            class="form-check form-switch ms-3 d-flex align-items-center gap-2"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="modeToggleDesktop"
+              style="cursor: pointer; width: 2.5rem; height: 1.4rem"
+            />
+            <label
+              class="form-check-label fw-semibold"
+              for="modeToggleDesktop"
+              id="modeLabelDesktop"
+              style="color: #1b4d3e"
+              >Light Mode</label
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="container text-center py-5">
+      <h1 class="display-5 fw-semibold" id="building-h1">
+        Building Local Solutions<br />with Global Class
+      </h1>
+      <p class="lead mt-3" id="building-p">
+        From hospitality to housing, transport to health – we serve with
+        excellence.
+      </p>
+      <div
+        class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4"
+      >
+        <a href="#" class="btn btn-godwin px-4 py-2 fw-bold">Learn More</a>
+        <a
+          href="#"
+          class="btn btn-outline-success px-4 py-2 fw-bold"
+          id="building"
+          >Contact Us</a
+        >
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="businesses" class="container text-center py-5">
+      <h3 class="section-title">OUR STORY</h3>
+      <h2 id="empowering-h1">Empowering Dreams, Inspiring Futures.</h2>
+      <p class="mx-auto mt-3" style="max-width: 700px">
+        Founded in memory of Oliver Kabugho, Godwin Group carries a vision of
+        service, growth, and dignity. We exist to empower communities, create
+        jobs, and deliver excellence across industries.
+      </p>
+    </section>
+
+    <!-- Businesses -->
+    <section class="container text-center py-5">
+      <h3 class="section-title mb-4">OUR BUSINESSES</h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./images/godwinResturants.png"
+              class="card-img-top"
+              loading="lazy"
+              alt="Transport"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./images/apartments.png"
+              class="card-img-top"
+              loading="lazy"
+              alt="Apartments"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./images/restaurant.png"
+              class="card-img-top"
+              loading="lazy"
+              alt="Restaurant"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./images/clinic.png"
+              class="card-img-top"
+              loading="lazy"
+              alt="Clinic"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./images/farm.png" class="card-img-top" alt="Farm" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./images/godwinHotels.png"
+              class="card-img-top"
+              loading="lazy"
+              alt="Godwin Hotels"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./images/godwinHardwares.jpg"
+              class="card-img-top"
+              loading="lazy"
+              alt="Godwin Hardware"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="./images/godwinTranspoters.png"
+              class="card-img-top"
+              loading="lazy"
+              alt="Mobile"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="careers" class="container text-center py-5">
+      <h3 class="section-title mb-4">WHY CHOOSE US</h3>
+      <ul
+        class="list-unstyled d-flex flex-column flex-md-row justify-content-center gap-4 mb-3"
+      >
+        <li>✓ Trusted Across Uganda</li>
+        <li>✓ Professional Teams</li>
+        <li>✓ Clean, Reliable, Affordable</li>
+        <li>✓ Community Impact</li>
+      </ul>
+
+      <p class="join-message mt-4">
+        <strong class="join-title">JOIN THE TEAM</strong><br />
+        <span class="godwin-green">
+          We’re always looking for passionate, hardworking people to join the
+          Godwin family.
+        </span>
+      </p>
+    </section>
+    <!-- Testimonial Carousel -->
+    <section class="container py-5">
+      <h3 class="section-title text-center mb-4">What Our Clients Say</h3>
+      <div
+        id="testimonialCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <div class="testimonial mx-auto" style="max-width: 600px">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="Sarah K"
+                class="mb-3"
+              />
+              <p class="lead">
+                "Godwin Group helped our family find safe, affordable housing.
+                Their team was so kind and professional."
+              </p>
+              <strong>— Sarah K., Kasese</strong>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="testimonial mx-auto" style="max-width: 600px">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="John M"
+                class="mb-3"
+              />
+              <p class="lead">
+                "Excellent services across the board. I love their community
+                impact approach. Highly recommend!"
+              </p>
+              <strong>— John M., Bwera</strong>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#testimonialCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center py-4 text-white">
+      <p class="mb-1">Godwin Group</p>
+      <p class="mb-3">
+        Proudly serving. Kasese-Bwera. Coming To Your Town Soon..
+      </p>
+
+      <div class="container">
+        <div class="row g-3 justify-content-center text-center text-md-start">
+          <!-- WhatsApp -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://wa.me/256700000000"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24">
+                <path
+                  fill="#25D366"
+                  d="M12 0C5.373 0 0 5.373 0 12a11.93 11.93 0 001.64 6.025L0 24l6.19-1.617A11.936 11.936 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+                />
+                <path
+                  fill="#fff"
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.1-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.652-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.198-.298.298-.497.1-.198.05-.373-.025-.522-.075-.148-.669-1.61-.916-2.202-.24-.578-.485-.5-.67-.51-.173-.007-.372-.009-.571-.009-.199 0-.522.074-.796.373-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.213 3.074.149.199 2.095 3.2 5.078 4.487.71.306 1.263.489 1.695.625.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.41.248-.692.248-1.286.173-1.41-.074-.124-.273-.199-.571-.348z"
+                />
+              </svg>
+              <small class="fw-semibold">WhatsApp</small>
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="mailto:info@godwingroup.com"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fcf8ed">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+              <small class="fw-semibold">Email</small>
+            </a>
+          </div>
+
+          <!-- Facebook -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://facebook.com"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2">
+                <path
+                  d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.505 0-1.797.715-1.797 1.763v2.312h3.588l-.467 3.622h-3.121V24h6.116C23.403 24 24 23.403 24 22.676V1.325C24 .597 23.403 0 22.675 0z"
+                />
+              </svg>
+              <small class="fw-semibold">Facebook</small>
+            </a>
+          </div>
+
+          <!-- Instagram -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://instagram.com"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#E1306C">
+                <path
+                  d="M7.5 2C4.46 2 2 4.46 2 7.5v9C2 19.54 4.46 22 7.5 22h9c3.04 0 5.5-2.46 5.5-5.5v-9C22 4.46 19.54 2 16.5 2h-9zm0 2h9c1.93 0 3.5 1.57 3.5 3.5v9c0 1.93-1.57 3.5-3.5 3.5h-9C5.57 20 4 18.43 4 16.5v-9C4 5.57 5.57 4 7.5 4zm9.75 1.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-5.25 1.5A5.25 5.25 0 006.75 12 5.25 5.25 0 0012 17.25 5.25 5.25 0 0017.25 12 5.25 5.25 0 0012 7.5zm0 1.5A3.75 3.75 0 0115.75 12 3.75 3.75 0 0112 15.75 3.75 3.75 0 018.25 12 3.75 3.75 0 0112 9z"
+                />
+              </svg>
+              <small class="fw-semibold">Instagram</small>
+            </a>
+          </div>
+
+          <!-- Twitter -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://twitter.com"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#1DA1F2">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4 1.64c-.89.53-1.87.91-2.91 1.12a4.48 4.48 0 00-7.64 4.08C7.69 6.58 4.07 4.88 1.64 2.16a4.48 4.48 0 001.39 5.98A4.52 4.52 0 01.96 7v.05a4.48 4.48 0 003.6 4.4 4.48 4.48 0 01-2.02.08 4.48 4.48 0 004.19 3.12A9 9 0 010 19.54 12.72 12.72 0 006.88 21c8.28 0 12.81-6.86 12.81-12.81 0-.2 0-.4-.01-.6A9.18 9.18 0 0023 3z"
+                />
+              </svg>
+              <small class="fw-semibold">Twitter</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

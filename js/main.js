@@ -54,8 +54,45 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// AOS init
-AOS.init({
-  duration: 800,
-  once: true,
+// // AOS init
+// AOS.init({
+//   duration: 800,
+//   once: true,
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+
+  const animateCounter = (el) => {
+    const target = +el.getAttribute("data-target");
+    let count = 0;
+    const duration = 2000;
+    const stepTime = Math.abs(Math.floor(duration / target));
+
+    const updateCounter = () => {
+      if (count < target) {
+        count += 10;
+        el.innerText = count;
+        setTimeout(updateCounter, stepTime);
+      } else {
+        el.innerText = target;
+      }
+    };
+
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 1 }
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
 });

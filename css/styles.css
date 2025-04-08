@@ -275,7 +275,7 @@ body.dark-mode .join-message {
   height: auto;
 }
 .testimonial {
-  background: #fff;
+  background: #fbf8ef;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -286,3 +286,93 @@ body.dark-mode .join-message {
   border-radius: 50%;
   object-fit: cover;
 }
+.counter-box {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s;
+}
+.counter-box:hover {
+  transform: translateY(-5px);
+}
+#impact .counter {
+  color: #1b4d3e;
+}
+
+body.dark-mode #impact .counter-box {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+#values svg {
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+#values svg:hover {
+  transform: scale(1.2);
+}
+footer .powered-by {
+  font-size: 0.9rem;
+  color: #f1f1f1;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+#scrollTopBtn {
+  background-color: #1b4d3e;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+  background-color: #b65b1f;
+}
+
+/* Service Cards Hover Effect */
+#services .border {
+  transition: all 0.3s ease;
+}
+
+#services .border:hover {
+  background-color: #1b4d3e;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#services .border:hover svg {
+  fill: #ffffff;
+}
+
+#services .border:hover .text-muted {
+  color: #e0e0e0 !important;
+}
+
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover-effect:hover {
+  background-color: #1b4d3e;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#values .border:hover svg {
+  fill: #ffffff;
+}
+
+#values .border:hover .text-muted {
+  color: #e0e0e0 !important;
+}
+
+
+

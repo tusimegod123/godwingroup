@@ -436,6 +436,17 @@ form textarea:focus {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0, 255, 170, 0.15);
 }
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+.text-godwin {
+  color: #1b4d3e;
+}
+
 
 
 

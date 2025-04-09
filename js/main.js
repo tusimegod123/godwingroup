@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       navbar.classList.remove("navbar-scrolled");
     }
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add("show");
+    } else {
+      scrollTopBtn.classList.remove("show");
+    }
   });
 
   const savedScroll = localStorage.getItem("scrollPosition");
@@ -95,4 +100,69 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   counters.forEach((counter) => observer.observe(counter));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector('form[action*="formspree.io"]');
+  const successMessage = document.getElementById("formSuccess");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          successMessage.classList.remove("d-none");
+          form.reset();
+        } else {
+          alert("Oops! Something went wrong. Please try again.");
+        }
+      })
+      .catch((error) => {
+        alert("Failed to send. Please check your internet connection.");
+      });
+  });
+});
+
+document.querySelectorAll("section").forEach((section) => {
+  section.classList.add("aos-init");
+  section.setAttribute("data-aos", "fade-up");
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const offcanvasElement = document.getElementById("offcanvasMenu");
+  const offcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+  const links = offcanvasElement.querySelectorAll(".nav-link");
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      offcanvas.hide(); // close the offcanvas menu
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const offcanvasElement = document.getElementById("offcanvasMenu");
+
+  if (offcanvasElement) {
+    const bsOffcanvas =
+      bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+
+    // Close offcanvas on any internal link click
+    const closeLinks = offcanvasElement.querySelectorAll(
+      "a[href^='#'], .btn[href^='#']"
+    );
+
+    closeLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        bsOffcanvas.hide();
+      });
+    });
+  }
 });

@@ -166,3 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});

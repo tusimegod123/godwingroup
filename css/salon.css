@@ -1,0 +1,61 @@
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fcf8ed;
+  color: #1b4d3e;
+  padding-top: 80px;
+}
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+}
+.laclass-hero {
+  background-image: url("../images/laclass-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+  padding: 6rem 1rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+.laclass-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27, 77, 62, 0.75);
+  z-index: -1;
+}
+.hero-description {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.service-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+}
+footer {
+  background-color: #1b4d3e;
+  color: #fff;
+  padding: 3rem 1rem;
+}
+
+.service-card svg {
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.service-card:hover svg {
+  transform: scale(1.2);
+  fill: #b65b1f; /* Optional highlight color on hover */
+}
+
+

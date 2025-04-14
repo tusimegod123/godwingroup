@@ -404,3 +404,24 @@ form textarea:focus {
   background-color: #f8f9fa;
   color: #1b4d3e;
 }
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 90px;
+  right: 15px;
+  z-index: 999;
+}
+.whatsapp-float img {
+  width: 50px;
+  height: 50px;
+}
+.godwin-green-link{
+  color:#1b4d3e;
+  text-decoration: none;
+}
+
+.godwin-green-link:hover{
+  color:#b65b1f;
+  text-decoration: underline;
+ 
+}

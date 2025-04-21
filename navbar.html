@@ -1,0 +1,187 @@
+<nav
+  id="mainNavbar"
+  class="navbar navbar-expand-md fixed-top px-4 py-3 navbar-transparent"
+>
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <svg
+        width="180"
+        height="40"
+        viewBox="0 0 300 80"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Olivwin Logo"
+      >
+        <path
+          d="M30,40 a20,20 0 1,0 40,0"
+          fill="none"
+          stroke="#1b4d3e"
+          stroke-width="4"
+        />
+        <path
+          d="M30,40 a20,20 0 1,1 40,0"
+          fill="none"
+          stroke="#a76f1f"
+          stroke-width="4"
+        />
+        <circle cx="50" cy="40" r="4" fill="#1b4d3e" />
+        <text
+          x="90"
+          y="55"
+          font-family="'Playfair Display', serif"
+          font-size="36"
+          fill="#1b4d3e"
+          font-weight="800"
+        >
+          Olivwin
+        </text>
+      </svg>
+    </a>
+
+    <!-- Mobile Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasMenu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#about">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle fw-semibold"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              >Our Businesses</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="salon.html">LaClass Salon</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="farm.html">Mungu Asifiwe Farm</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="properties.html"
+                  >Olivwin Properties</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="transport.html"
+                  >Godwin Transporters</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="shop.html">Olivwin Shop</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#careers">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-godwin text-white fw-bold" href="#contact"
+              >Get In Touch</a
+            >
+          </li>
+        </ul>
+
+        <!-- Mobile Theme Toggle -->
+        <div class="form-check form-switch mt-4">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="modeToggleMobile"
+          />
+          <label class="form-check-label fw-semibold" for="modeToggleMobile"
+            >Light Mode</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop Navbar -->
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavDropdown"
+    >
+      <ul class="navbar-nav gap-3 align-items-center">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#about">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle fw-semibold"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            >Our Businesses</a
+          >
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="salon.html">LaClass Salon</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="farm.html">Mungu Asifiwe Farm</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="properties.html"
+                >Olivwin Properties</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="transport.html"
+                >Godwin Transporters</a
+              >
+            </li>
+            <li><a class="dropdown-item" href="shop.html">Olivwin Shop</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#careers">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-godwin px-4 py-2 fw-bold" href="#contact"
+            >Get In Touch</a
+          >
+        </li>
+      </ul>
+
+      <!-- Desktop Theme Toggle -->
+      <div class="form-check form-switch ms-3 d-flex align-items-center gap-2">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="modeToggleDesktop"
+        />
+        <label class="form-check-label fw-semibold" for="modeToggleDesktop"
+          >Light Mode</label
+        >
+      </div>
+    </div>
+  </div>
+</nav>

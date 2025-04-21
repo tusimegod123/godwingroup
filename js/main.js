@@ -58,7 +58,19 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("scrollPosition", window.scrollY);
   });
 });
-
+fetch("navbar.html")
+  .then((response) => response.text())
+  .then(
+    (data) => (document.getElementById("navbar-placeholder").innerHTML = data)
+  );
+window.addEventListener("scroll", function () {
+  const navbar = document.getElementById("mainNavbar");
+  if (window.scrollY > 50) {
+    navbar.classList.add("navbar-scrolled");
+  } else {
+    navbar.classList.remove("navbar-scrolled");
+  }
+});
 // // AOS init
 // AOS.init({
 //   duration: 800,

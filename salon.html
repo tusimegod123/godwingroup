@@ -171,6 +171,82 @@
       </div>
     </section>
 
+    <!-- Booking Form -->
+    <section id="booking" class="container py-5">
+      <h2 class="text-center mb-4">Book Your Appointment</h2>
+      <form
+        action="https://formspree.io/f/xpwpkqpl"
+        method="POST"
+        class="booking-form"
+      >
+        <div class="mb-3">
+          <label for="name" class="form-label fw-semibold">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label fw-semibold">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label fw-semibold">Phone</label>
+          <input
+            type="tel"
+            class="form-control"
+            name="phone"
+            id="phone"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="service" class="form-label fw-semibold">Service</label>
+          <select class="form-select" name="service" id="service" required>
+            <option value="">Choose a Service</option>
+            <option>Haircuts & Styling</option>
+            <option>Facials & Skincare</option>
+            <option>Manicures & Pedicures</option>
+            <option>Bridal & Event Makeup</option>
+            <option>Massages & Spa</option>
+            <option>Waxing & Grooming</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label fw-semibold"
+            >Additional Notes</label
+          >
+          <textarea
+            class="form-control"
+            name="message"
+            id="message"
+            rows="4"
+          ></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-godwin px-5 py-2">
+            ✉️ Send Message
+          </button>
+        <div
+          id="formSuccess"
+          class="alert alert-success mt-3 d-none"
+          role="alert"
+        >
+          ✅ Your appointment has been sent successfully! We'll get back to you
+          soon.
+        </div>
+      </form>
+    </section>
+
     <footer id="contact">
       <div class="container text-center">
         <h2 class="mb-4">Contact Us</h2>
@@ -182,5 +258,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

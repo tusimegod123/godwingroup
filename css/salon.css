@@ -57,5 +57,39 @@ footer {
   transform: scale(1.2);
   fill: #b65b1f; /* Optional highlight color on hover */
 }
+.booking-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
+.btn-godwin {
+  background-color: #1b4d3e;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
 
+.btn-godwin:hover {
+  background-color: #b65b1f;
+  color: white;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+  .laclass-hero {
+    min-height: 80vh;
+    padding: 4rem 1rem 2rem;
+    background-position: top center; /* shift image higher on mobile */
+  }
+
+  .laclass-hero h1 {
+    font-size: 2rem;
+  }
+
+  .laclass-hero p {
+    font-size: 1rem;
+  }
+}

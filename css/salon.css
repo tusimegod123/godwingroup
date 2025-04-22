@@ -8,6 +8,9 @@ body {
 h1, h2, h3 {
   font-family: "Playfair Display", serif;
 }
+.navbar-brand{
+  color: #1b4d3e;
+}
 .laclass-hero {
   background-image: url("../images/laclass-bg.png");
   background-size: cover;
@@ -185,6 +188,18 @@ footer {
 .testimonial:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
+.about-us-image img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.about-us-image img:hover {
+  transform: scale(1.02);
+}
 
 @media (max-width: 576px) {
   .laclass-hero {
@@ -224,6 +239,13 @@ footer {
   .laclass-hero .btn {
     width: 90%;
     max-width: 250px;
+  }
+
+  .about-us-image{
+      padding: 0 1rem;
+  }
+  .about-us-image img {
+    border-radius: 8px;
   }
 }
 

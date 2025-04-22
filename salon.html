@@ -18,7 +18,7 @@
   <body>
     <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm py-3">
       <div class="container">
-        <a class="navbar-brand fw-bold text-success" href="https://olivwin.com/"
+        <a class="navbar-brand fw-bold " href="index.html"
           >Olivwin</a
         >
         <button
@@ -35,14 +35,19 @@
         >
           <ul class="navbar-nav gap-3">
             <li class="nav-item">
-              <a class="nav-link text-dark" href="https://olivwin.com">Home</a>
+              <a class="nav-link text-dark" href="#about">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark" href="#services">Services</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="#contact">Contact</a>
-            </li>
+            <li>       <a class="nav-link text-dark" href="#careers-apply"
+              >Careers</a
+            ></li>
+            <li>        <a class="btn btn-godwin px-4 py-2 fw-bold" href="#contact"
+              >Get In Touch</a
+            ></li>
+       
+
           </ul>
         </div>
       </div>
@@ -75,6 +80,28 @@
         </div>
       </div>
     </section>
+    <!-- About Us Section -->
+<section id="about" class="container py-5 text-center fade-in-up">
+  <h2 class="section-title mb-4">About LaClass Salon</h2>
+
+  <p class="mx-auto" style="max-width: 750px; font-size: 1.1rem; line-height: 1.8;">
+    At <strong>LaClass Salon</strong>, beauty isn’t just about appearance—it's about confidence, self-expression, and care. 
+    Since our founding, we’ve served clients with precision and passion, offering top-tier hair, beauty, and grooming 
+    services that leave you glowing from the inside out.
+  </p>
+
+  <p class="mx-auto mt-3" style="max-width: 750px; font-size: 1.05rem;">
+    From everyday glam to bridal transformations, our stylists and skincare specialists are committed to delivering 
+    excellence in every touch. We use premium products, personalized techniques, and a whole lot of love—because at LaClass, 
+    <em>you don’t just walk in for beauty, you leave with confidence.</em>
+  </p>
+
+  <!-- Optional Image (Style Tip: Place something natural, modern, warm-toned) -->
+  <div class="mt-5 about-us-image">
+    <img src="images/laclass-bg-mobile.png" alt="LaClass Experience" class="img-fluid rounded shadow" style="max-width: 650px;">
+  </div>
+</section>
+
     <section id="video" class="container py-5 fade-in-up">
       <h2 class="text-center mb-4">A Glimpse into LaClass Beauty</h2>
       <p
@@ -299,12 +326,98 @@
   </div>
 </section>
 
+<!-- Careers Section -->
+<section id="careers" class="container py-5 text-center fade-in-up">
+  <h2 class="section-title mb-4">Join Our Team</h2>
 
+  <p class="lead mb-4 mx-auto" style="max-width: 700px; line-height: 1.8;">
+    At <strong>LaClass Salon</strong>, we're more than a beauty destination—we're a family of passionate creatives dedicated 
+    to empowering confidence and elegance. If you’re skilled, driven, and ready to grow, we want you on our team.
+  </p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+    <div class="col">
+      <div class="  testimonial p-4 shadow rounded text-center mx-auto w-100">
+        <h5 class="fw-bold mb-2">💇‍♀️ Hairstylists</h5>
+        <p class="text-muted mb-0">Cut, color, and style with confidence and creativity.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="testimonial p-4 shadow rounded text-center mx-auto w-100">
+        <h5 class="fw-bold mb-2">💄 Makeup Artists</h5>
+        <p class="text-muted mb-0">Transform faces for weddings, events, and photoshoots.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="testimonial p-4 shadow rounded text-center mx-auto w-100">
+        <h5 class="fw-bold mb-2">💅 Nail Technicians</h5>
+        <p class="text-muted mb-0">Specialize in manicures, pedicures, and nail art designs.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-4 mb-3">
+    📍 Based in Kasese-Bwera? Drop by with your portfolio—or apply online!
+  </p>
+
+  <a href="#careers-apply" class="btn btn-godwin px-5 py-2 fw-semibold">
+    Apply Now
+  </a>
+</section>
+
+<!-- Careers Application Form -->
+<section id="careers-apply" class="container py-5 fade-in-up">
+  <h3 class="text-center mb-4">Apply to Join LaClass</h3>
+  <form action="https://formspree.io/f/xpwpkqpl" method="POST" class="booking-form">
+    <div class="mb-3">
+      <label for="fullname" class="form-label fw-semibold">Full Name</label>
+      <input type="text" class="form-control" id="fullname" name="fullname" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label fw-semibold">Email(Optional)</label>
+      <input type="email" class="form-control" id="email" name="email" />
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label fw-semibold">Phone Number</label>
+      <input type="tel" class="form-control" id="phone" name="phone" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="role" class="form-label fw-semibold">Position You're Applying For</label>
+      <select class="form-select" id="role" name="role" required>
+        <option value="">Select a Role</option>
+        <option>Hairstylist</option>
+        <option>Makeup Artist</option>
+        <option>Nail Technician</option>
+        <option>Spa Therapist</option>
+        <option>Receptionist</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label fw-semibold">Tell Us About Yourself</label>
+      <textarea class="form-control" id="message" name="message" rows="4" placeholder="Brief bio, experience or what makes you a great fit..."></textarea>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-godwin px-5 py-2">
+        📄 Submit Application
+      </button>
+    </div>
+
+    <div id="formSuccess" class="alert alert-success mt-3 d-none" role="alert">
+      ✅ Your application has been submitted! We’ll get in touch soon.
+    </div>
+  </form>
+</section>
 
 
     <!-- Booking Form -->
     <section id="booking" class="container py-5">
-      <h2 class="text-center mb-4">Book Your Appointment</h2>
+      <h2 class="text-center mb-4">Book Your Appointment Or Get In Touch</h2>
       <form
         action="https://formspree.io/f/xpwpkqpl"
         method="POST"
@@ -350,6 +463,7 @@
             <option>Bridal & Event Makeup</option>
             <option>Massages & Spa</option>
             <option>Waxing & Grooming</option>
+            <option>Get In Touch</option>
           </select>
         </div>
         <div class="mb-3">

@@ -15,6 +15,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
       :root {
@@ -22,34 +24,44 @@
         --orange: #b65b1f;
         --cream: #fcf8ed;
       }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+
       body {
         font-family: "Inter", sans-serif;
-        background: var(--cream);
+        background-color: #f8f0e1;
         color: var(--green);
+        scroll-behavior: smooth;
+      }
+      html {
+        scroll-behavior: smooth;
       }
 
-      /* NAVBAR */
-      .navbar-brand,
-      .nav-link {
-        color: var(--green);
+      a {
+        text-decoration: none;
       }
 
-      /* HERO SECTION */
+      /* Navbar */
+      .navbar {
+        background-color: white;
+      }
+
+      .nav-link,
+      .navbar-brand {
+        color: var(--green) !important;
+        font-weight: 600;
+      }
+
+      .nav-link:hover {
+        color: var(--orange) !important;
+      }
+
+      /* Hero */
       .hero {
-        position: relative;
-        background: url("/images/olivwin-transporters-hero-image.png") center
-          center no-repeat;
-        background-size: cover;
-        background-attachment: scroll;
         height: 95vh;
+        background: url("/images/olivwin-transporters-hero-image.png") center
+          center / cover no-repeat;
+        position: relative;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
         color: white;
       }
 
@@ -57,11 +69,11 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-color: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.45);
         z-index: 1;
       }
 
-      .hero .hero-content {
+      .hero-content {
         position: relative;
         z-index: 2;
         padding: 2rem;
@@ -72,39 +84,41 @@
       .hero h1 {
         font-family: "Playfair Display", serif;
         font-size: 3rem;
-        line-height: 1.2;
-        margin-bottom: 1.2rem;
       }
 
       .hero p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-        color: #fff;
+        font-size: 1.1rem;
+        margin-top: 1rem;
         margin-bottom: 2rem;
       }
 
-      .hero .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-
-      .hero .buttons a {
-        background-color: var(--orange);
-        color: white;
+      .hero .btn {
+        margin-right: 1rem;
         padding: 0.75rem 1.5rem;
-        border-radius: 5px;
-        text-decoration: none;
         font-weight: bold;
+        border-radius: 5px;
       }
 
-      .hero .buttons a:last-child {
-        background-color: var(--green);
+      .btn-orange {
+        background: var(--orange);
+        color: white;
       }
 
-      /* SERVICES SECTION */
+      .btn-green {
+        background: var(--green);
+        color: white;
+      }
+
+      .btn-orange:hover {
+        background: #cf6f16;
+      }
+
+      .btn-green:hover {
+        background: #14573a;
+      }
+
+      /* Services */
       .services-section {
-        background: var(--cream);
         padding: 4rem 1rem;
       }
 
@@ -116,40 +130,35 @@
       }
 
       .service-card {
-        /* background: #ffffff; */
-        padding: 1.75rem 1.2rem;
-        border-radius: 18px;
-        border: 1px solid #f3ede2;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
         transition: all 0.3s ease;
         text-align: center;
       }
 
       .service-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        transform: translateY(-5px);
       }
 
       .service-card span {
-        font-size: 2.4rem;
-        display: block;
-        margin-bottom: 1rem;
+        font-size: 2.5rem;
         color: #e68a00;
+        display: block;
+        margin-bottom: 0.8rem;
       }
 
       .service-card h5 {
-        font-family: "Inter", sans-serif;
+        font-size: 1.05rem;
         font-weight: 600;
         color: var(--green);
-        font-size: 1.05rem;
-        margin-bottom: 0;
       }
 
-      /* WHY CHOOSE US */
+      /* Why Choose Us */
       .why-choose li {
         list-style: none;
+        padding-left: 1.5rem;
         position: relative;
-        padding-left: 1.4rem;
         margin-bottom: 1rem;
       }
 
@@ -161,31 +170,157 @@
         font-weight: bold;
       }
 
-      /* FOOTER + OTHER */
+      /* Testimonial */
       .testimonial {
-        background: white;
-        padding: 1.2rem;
-        font-style: italic;
+        background: #fff;
+        padding: 1.5rem;
         border-left: 4px solid var(--orange);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: #333;
+      }
+
+      /* Call to Action */
+      .cta-driver {
+        background: #fff8ef;
+        padding: 4rem 1.5rem;
+        text-align: center;
+        border-top: 2px dashed var(--orange);
+        border-bottom: 2px dashed var(--orange);
+      }
+
+      .cta-driver h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-driver a {
+        background: var(--green);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: bold;
+        display: inline-block;
         margin-top: 1rem;
       }
 
+      .cta-driver a:hover {
+        background: #14573a;
+      }
+      .cta-driver .btn-green {
+        background: var(--green);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .cta-driver .btn-green:hover {
+        background: #14573a;
+      }
+
+      /* Footer */
       .footer {
         background: var(--green);
         color: white;
+        padding: 3rem 1rem;
         text-align: center;
-        padding: 2.5rem 1rem;
       }
 
-      .footer .cta-buttons a {
+      .footer a {
         background: var(--orange);
+        color: white;
         padding: 0.7rem 1.4rem;
         margin: 0.5rem;
-        color: white;
         text-decoration: none;
         border-radius: 5px;
         font-weight: bold;
         display: inline-block;
+      }
+
+      .footer a:hover {
+        background: #cf6f16;
+      }
+
+      /* WhatsApp Icon */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+      .text-orange {
+        color: var(--orange);
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out 0.1s both;
+      }
+      #coverage {
+        background-color: #f8f0e1;
+      }
+      .btn-orange {
+        background-color: #b65b1f;
+        color: white;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-orange:hover {
+        background-color: #9a4a17;
+        color: white;
+      }
+
+      .form-control:focus {
+        border-color: #b65b1f;
+        box-shadow: 0 0 0 0.2rem rgba(182, 91, 31, 0.2);
+      }
+
+      footer {
+        background-color: #1b4d3e;
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .footer-icons svg {
+        height: 24px;
+        margin: 0 10px;
+      }
+
+      .btn-godwin {
+        background-color: #1b4d3e;
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .btn-godwin:hover {
+        background-color: #b65b1f;
+        color: white;
       }
 
       /* MOBILE OVERRIDES */
@@ -221,23 +356,29 @@
           width: 100%;
           text-align: center;
         }
-
-        .service-card {
-          padding: 1.5rem 1rem;
-          border-radius: 14px;
+        #partner-img {
+          display: block;
+          margin: 1.5rem auto 0 auto;
+          max-width: 220px;
+        }
+        .cta-buttons {
+          flex-direction: column !important;
+          align-items: center;
         }
 
-        .service-card span {
-          font-size: 2rem;
+        .cta-buttons a {
+          width: 100%;
+          max-width: 300px;
+          text-align: center;
         }
       }
     </style>
   </head>
-  <body>
-    <!-- NAV -->
+  <body id="top">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm py-3">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Olivwin Transporters</a>
+        <a class="navbar-brand fw-bold" href="#top">Olivwin Transporters</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -252,13 +393,16 @@
         >
           <ul class="navbar-nav gap-3">
             <li class="nav-item">
+              <a class="nav-link" href="index.html">Olivwin</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#about">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#careers-apply">Careers</a>
+              <a class="nav-link" href="#careers">Careers</a>
             </li>
             <li>
               <a class="btn btn-godwin px-4 py-2 fw-bold" href="#contact"
@@ -270,7 +414,7 @@
       </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-content">
         <h1>Reliable. Safe. Always On Time.</h1>
@@ -278,63 +422,102 @@
           Olivwin Transporters is redefining public and private transport in
           Uganda — clean, efficient, and customer-first.
         </p>
-        <div class="buttons">
-          <a href="#">Book a Ride</a>
-          <a href="#">Join as a Driver</a>
+        <a href="#ride-booking" class="btn btn-orange">Book a Ride</a>
+        <a href="#" class="btn btn-green">Join as a Driver</a>
+      </div>
+    </section>
+
+    <section id="about" class="py-5" style="background-color: #fcf8ed">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left: Image -->
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <img
+              src="/images/about-olivwin.png"
+              alt="Olivwin Fleet"
+              class="img-fluid rounded-4 shadow-sm"
+            />
+          </div>
+
+          <!-- Right: Content -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <h2
+              class="section-title"
+              style="font-family: 'Playfair Display', serif; color: #1b4d3e"
+            >
+              About Olivwin Transporters
+            </h2>
+            <p class="lead" style="color: #333">
+              At Olivwin Transporters, we’re redefining transport in Uganda —
+              one ride at a time. From town hops to long-distance journeys, our
+              clean, GPS-tracked vehicles and courteous drivers deliver
+              reliability, comfort, and safety.
+            </p>
+            <p>
+              What began as a local idea in Kasese has grown into a
+              community-driven movement committed to improving everyday
+              mobility. Whether you're heading to the market, school, or airport
+              — we’re just a tap away.
+            </p>
+            <ul class="list-unstyled mt-3">
+              <li>✓ Locally owned and operated</li>
+              <li>✓ Trusted by hundreds daily</li>
+              <li>✓ Expanding across Western Uganda and beyond</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="services-section">
-      <div class="container py-5">
+    <!-- Services + Why Choose Us -->
+    <section class="services-section" id="services">
+      <div class="container">
         <div class="row align-items-start">
           <div class="col-lg-8">
             <h2 class="section-title">Our Services</h2>
             <div class="row g-4">
-              <div class="col-12 col-md-4">
-                <div class="service-card h-100">
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="service-card">
                   <span>🚐</span>
                   <h5>Daily Town Rides</h5>
                 </div>
               </div>
-              <div class="col-12 col-md-4">
-                <div class="service-card h-100">
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
                   <span>✈️</span>
                   <h5>Airport Pickup</h5>
                 </div>
               </div>
-              <div class="col-12 col-md-4">
-                <div class="service-card h-100">
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
                   <span>🏫</span>
                   <h5>School Transport</h5>
                 </div>
               </div>
-              <div class="col-12 col-md-4">
-                <div class="service-card h-100">
+              <div class="col-md-4" data-aos="fade-up">
+                <div class="service-card">
                   <span>📦</span>
                   <h5>Parcel Delivery</h5>
                 </div>
               </div>
-              <div class="col-12 col-md-4">
-                <div class="service-card h-100">
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
                   <span>👔</span>
                   <h5>Corporate Staff Transport</h5>
                 </div>
               </div>
-              <div class="col-12 col-md-4">
-                <div class="service-card h-100">
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
                   <span>🛵</span>
                   <h5>Boda-boda & Special Hire</h5>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- WHY CHOOSE US -->
           <div
             class="col-lg-4 ps-lg-5 text-center text-lg-start mx-lg-0"
-            style="margin-top: 5rem"
+            data-aos="fade-left"
+            style="margin-top: 7rem"
           >
             <h2 class="section-title">Why Choose Us</h2>
             <ul class="why-choose d-inline-block text-start">
@@ -349,41 +532,423 @@
       </div>
     </section>
 
-    <!-- TESTIMONIAL -->
-    <section class="section">
-      <h2>Customer Testimonials</h2>
-      <div class="testimonial">
-        "I use Olivwin daily — they’re always on time and polite." – Brenda,
-        Kasese
+    <section class="container py-5" id="testimonials">
+      <div class="row align-items-start">
+        <!-- Left: Customer Testimonial -->
+        <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+          <h2 class="section-title">Customer Testimonials</h2>
+          <div
+            class="p-4 rounded shadow-sm d-flex align-items-start"
+            style="border-left: 5px solid var(--orange)"
+          >
+            <div class="me-3 fs-3 text-orange">💬</div>
+            <div>
+              <p class="mb-2 fst-italic">
+                I use Olivwin daily — they’re always on time and polite.
+              </p>
+              <strong>— Brenda, Kasese</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Become a Partner or Driver -->
+        <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+          <div
+            class="d-flex flex-column flex-md-row align-items-start align-items-md-center"
+          >
+            <div class="flex-grow-1">
+              <h2 class="section-title">Become a Partner or Driver</h2>
+              <p class="mb-3">
+                Join our growing network of professional drivers. Flexible
+                hours, steady income, and clean vehicles guaranteed.
+              </p>
+              <ul class="why-choose">
+                <li>Lease or bring your own vehicle</li>
+                <li>Transparent payments</li>
+                <li>Dedicated driver support</li>
+              </ul>
+            </div>
+            <img
+              id="partner-img"
+              src="/images/driver-cars.png"
+              alt="Driver Vehicles"
+              class="img-fluid fade-in-up ms-md-4 mt-4 mt-md-0"
+              style="max-width: 240px; border-radius: 5px"
+            />
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- PARTNER -->
-    <section class="section">
-      <h2>Become a Partner or Driver</h2>
-      <p>
-        Join our network and earn with flexible schedules. Lease or invest in a
-        vehicle through Olivwin Transporters today.
+    <section
+      class="cta-driver position-relative text-white"
+      id="careers"
+      style="
+        background: url('/images/driver-hiring-wide.png') center/cover no-repeat;
+        z-index: 1;
+      "
+    >
+      <div
+        class="overlay"
+        style="
+          position: absolute;
+          inset: 0;
+          background-color: rgba(27, 77, 62, 0.7);
+          z-index: -1;
+        "
+      ></div>
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <!-- Left: Content -->
+          <div
+            class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start"
+            data-aos="zoom-in"
+          >
+            <div
+              class="badge bg-light text-dark text-uppercase fw-bold mb-3 px-3 py-1 rounded-pill"
+            >
+              Join Our Team
+            </div>
+            <h3 class="section-title text-white">Drive with Olivwin</h3>
+            <p class="lead">
+              We’re onboarding drivers across Uganda. Flexible hours, steady
+              income, and clean vehicles guaranteed.
+            </p>
+            <a href="#driver-form" class="btn btn-orange px-4 py-2 mt-2"
+              >Apply Now</a
+            >
+          </div>
+
+          <!-- Right: Coverage Map -->
+          <div class="col-lg-6 text-center" data-aos="fade-left">
+            <img
+              src="/images/driver-hiring-wide.png"
+              alt="Uganda Map"
+              class="img-fluid rounded shadow-sm"
+              style="width: 100%; max-width: 480px; height: auto"
+            />
+            <p class="small mt-2">
+              Now hiring in Bwera, Kasese, Fort Portal & more!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="container py-5" id="coverage">
+      <div class="row align-items-center g-4">
+        <!-- Left: Text Content -->
+        <div class="col-lg-4 text-center text-lg-start">
+          <h2 class="section-title">Our Coverage Area</h2>
+          <p class="mb-3 fw-semibold fs-5">
+            Need a ride? <br />
+            We’re just one click away
+          </p>
+
+          <!-- CTA Buttons -->
+          <div
+            class="cta-buttons d-flex flex-wrap justify-content-center gap-3"
+          >
+            <a
+              href="#ride-booking"
+              class="btn btn-green px-4 py-2 fw-bold rounded-pill"
+              >Book Now</a
+            >
+            <a
+              href="#contact"
+              class="btn btn-light fw-bold px-4 py-2 rounded-pill shadow-sm"
+              >Contact Us</a
+            >
+            <a
+              href="https://wa.me/+16692169519"
+              target="_blank"
+              class="btn btn-success fw-bold px-4 py-2 rounded-pill"
+              >WhatsApp Support</a
+            >
+          </div>
+        </div>
+
+        <!-- Middle: Uganda Map -->
+        <div class="col-lg-4 text-center">
+          <img
+            src="/images/coverage-map.png"
+            alt="Uganda Map"
+            class="img-fluid"
+            style="max-height: 280px"
+          />
+        </div>
+
+        <!-- Right: Illustration -->
+        <div class="col-lg-4 text-center">
+          <img
+            src="/images/tech-graphic-truebrand.png"
+            alt="Vehicle Tech Illustration"
+            class="img-fluid"
+            style="max-height: 180px"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="ride-booking"
+      class="py-5 position-relative text-white"
+      style="
+        background: url('/images/form-background.png') center/cover no-repeat;
+        z-index: 1;
+      "
+    >
+      <!-- Soft overlay for contrast -->
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100"
+        style="background-color: rgba(27, 77, 62, 0.75); z-index: -1"
+      ></div>
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div
+              class="shadow-lg rounded-4 p-5"
+              style="background-color: rgba(27, 77, 62, 0.75)"
+            >
+              <h2
+                class="text-center mb-4"
+                style="font-family: 'Playfair Display', serif"
+              >
+                Book a Ride
+              </h2>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="e.g. John Doe"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Phone Number</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="e.g. +256 700 000000"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Pickup Location</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="e.g. Kasese Town"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Drop-off Location</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="e.g. Bwera"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-control" required />
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Time</label>
+                    <input type="time" class="form-control" required />
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Additional Notes</label>
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Any special instructions?"
+                    ></textarea>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    <button
+                      type="submit"
+                      class="btn btn-orange px-5 py-2 fw-bold"
+                    >
+                      Confirm Booking
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-white">
+      <p class="mb-1">Olivwin</p>
+      <p class="mb-3">
+        Proudly serving. Kasese-Bwera. Coming To Your Town Soon..
       </p>
-    </section>
 
-    <!-- COVERAGE -->
-    <section class="section">
-      <h2>Our Coverage Area</h2>
-      <p>Bwera, Kasese, Fort Portal, and more coming soon!</p>
-    </section>
+      <div class="container">
+        <div class="row g-3 justify-content-center text-center text-md-start">
+          <!-- WhatsApp -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://wa.me/+166921669519"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24">
+                <path
+                  fill="#25D366"
+                  d="M12 0C5.373 0 0 5.373 0 12a11.93 11.93 0 001.64 6.025L0 24l6.19-1.617A11.936 11.936 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"
+                />
+                <path
+                  fill="#fff"
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.1-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.652-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.15-.174.198-.298.298-.497.1-.198.05-.373-.025-.522-.075-.148-.669-1.61-.916-2.202-.24-.578-.485-.5-.67-.51-.173-.007-.372-.009-.571-.009-.199 0-.522.074-.796.373-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.213 3.074.149.199 2.095 3.2 5.078 4.487.71.306 1.263.489 1.695.625.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.41.248-.692.248-1.286.173-1.41-.074-.124-.273-.199-.571-.348z"
+                />
+              </svg>
+              <small class="fw-semibold">WhatsApp</small>
+            </a>
+          </div>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <h2>Need a ride? We’re just one click away.</h2>
-      <div class="cta-buttons">
-        <a href="#">Book Now</a>
-        <a href="#">Contact Us</a>
-        <a href="#">WhatsApp Support</a>
+          <!-- Email -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="mailto:info@godwingroup.com"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#fcf8ed">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+              <small class="fw-semibold">Email</small>
+            </a>
+          </div>
+
+          <!-- Facebook -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://www.facebook.com/profile.php?id=100054528607543"
+              target="_blank"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2">
+                <path
+                  d="M22.675 0h-21.35C.597 0 0 .597 0 1.325v21.351C0 23.403.597 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.505 0-1.797.715-1.797 1.763v2.312h3.588l-.467 3.622h-3.121V24h6.116C23.403 24 24 23.403 24 22.676V1.325C24 .597 23.403 0 22.675 0z"
+                />
+              </svg>
+              <small class="fw-semibold">Facebook</small>
+            </a>
+          </div>
+
+          <!-- Instagram -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://instagram.com"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#E1306C">
+                <path
+                  d="M7.5 2C4.46 2 2 4.46 2 7.5v9C2 19.54 4.46 22 7.5 22h9c3.04 0 5.5-2.46 5.5-5.5v-9C22 4.46 19.54 2 16.5 2h-9zm0 2h9c1.93 0 3.5 1.57 3.5 3.5v9c0 1.93-1.57 3.5-3.5 3.5h-9C5.57 20 4 18.43 4 16.5v-9C4 5.57 5.57 4 7.5 4zm9.75 1.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-5.25 1.5A5.25 5.25 0 006.75 12 5.25 5.25 0 0012 17.25 5.25 5.25 0 0017.25 12 5.25 5.25 0 0012 7.5zm0 1.5A3.75 3.75 0 0115.75 12 3.75 3.75 0 0112 15.75 3.75 3.75 0 018.25 12 3.75 3.75 0 0112 9z"
+                />
+              </svg>
+              <small class="fw-semibold">Instagram</small>
+            </a>
+          </div>
+
+          <!-- Twitter -->
+          <div
+            class="col-6 col-sm-4 col-md-auto d-flex align-items-center justify-content-center gap-2"
+          >
+            <a
+              href="https://twitter.com"
+              class="text-decoration-none text-white d-flex align-items-center gap-1"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#1DA1F2">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0022.4 1.64c-.89.53-1.87.91-2.91 1.12a4.48 4.48 0 00-7.64 4.08C7.69 6.58 4.07 4.88 1.64 2.16a4.48 4.48 0 001.39 5.98A4.52 4.52 0 01.96 7v.05a4.48 4.48 0 003.6 4.4 4.48 4.48 0 01-2.02.08 4.48 4.48 0 004.19 3.12A9 9 0 010 19.54 12.72 12.72 0 006.88 21c8.28 0 12.81-6.86 12.81-12.81 0-.2 0-.4-.01-.6A9.18 9.18 0 0023 3z"
+                />
+              </svg>
+              <small class="fw-semibold">Twitter</small>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="powered-by mt-4 border-top pt-3">
+        <p class="mb-0">
+          Powered by <strong>Olivwin Technologies</strong> &copy;
+          <span id="year"></span>
+        </p>
       </div>
     </footer>
 
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/+16692169519"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat with us on WhatsApp"
+      >💬</a
+    >
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      // Prevent default browser focus jump behavior
+      window.addEventListener("hashchange", function (event) {
+        event.preventDefault();
+        const id = location.hash.replace("#", "");
+        const target = document.getElementById(id);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    </script>
+    <script>
+      document.querySelectorAll("a[href^='#']").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetID = this.getAttribute("href").substring(1);
+          const targetElement = document.getElementById(targetID);
+          if (targetElement) {
+            const navbarHeight = document.querySelector(".navbar").offsetHeight;
+            const offset = 2;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - navbarHeight - offset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+
+            // Close mobile nav if open
+            const nav = document.querySelector(".navbar-collapse");
+            if (nav.classList.contains("show")) {
+              new bootstrap.Collapse(nav).toggle();
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

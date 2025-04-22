@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Olivwin Transporters</title>
 
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -30,18 +32,21 @@
         background: var(--cream);
         color: var(--green);
       }
+
+      /* NAVBAR */
       .navbar-brand,
       .nav-link {
-        color: #1b4d3e;
+        color: var(--green);
       }
-      /* -------- DESKTOP (Default) -------- */
+
+      /* HERO SECTION */
       .hero {
         position: relative;
         background: url("/images/olivwin-transporters-hero-image.png") center
           center no-repeat;
         background-size: cover;
         background-attachment: scroll;
-        height: 90vh;
+        height: 95vh;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -52,7 +57,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background-color: rgba(0, 0, 0, 0.4); /* soft dark overlay */
+        background-color: rgba(0, 0, 0, 0.4);
         z-index: 1;
       }
 
@@ -72,11 +77,9 @@
       }
 
       .hero p {
-        font-family: "Inter", sans-serif;
         font-size: 1.05rem;
         line-height: 1.7;
         color: #fff;
-        line-height: 1.7;
         margin-bottom: 2rem;
       }
 
@@ -99,108 +102,66 @@
         background-color: var(--green);
       }
 
-      /* -------- MOBILE (Override for <= 768px) -------- */
-      @media (max-width: 768px) {
-        .hero {
-          height: 480px;
-          background-position: center center;
-          background-size: cover;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0; /* remove extra space */
-        }
+      /* SERVICES SECTION */
+      .services-section {
+        background: var(--cream);
+        padding: 4rem 1rem;
+      }
 
-        .hero-content {
-          background: rgba(46, 46, 46, 0.5); /* dark glass box */
-          padding: 2rem;
-          margin: 0 2rem;
-          border-radius: 12px;
-          max-width: 100%;
-          text-align: left;
-          z-index: 2;
-        }
-
-        .hero h1 {
-          font-size: 2.4rem;
-          margin-bottom: 1rem;
-        }
-
-        .hero p {
-          font-size: 1rem;
-          color: #fff;
-          line-height: 1.6;
-          margin-bottom: 1.5rem;
-        }
-
-        .hero .buttons {
-          flex-direction: column;
-        }
-
-        .hero .buttons a {
-          width: 100%;
-          text-align: center;
-        }
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--green);
+        margin-bottom: 2rem;
       }
 
       .service-card {
-        background: white;
-
-        padding: 1.25rem 1rem;
-
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        transition: 0.3s;
+        /* background: #ffffff; */
+        padding: 1.75rem 1.2rem;
+        border-radius: 18px;
+        border: 1px solid #f3ede2;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
+        text-align: center;
       }
+
       .service-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
       }
+
+      .service-card span {
+        font-size: 2.4rem;
+        display: block;
+        margin-bottom: 1rem;
+        color: #e68a00;
+      }
+
+      .service-card h5 {
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        color: var(--green);
+        font-size: 1.05rem;
+        margin-bottom: 0;
+      }
+
+      /* WHY CHOOSE US */
       .why-choose li {
         list-style: none;
         position: relative;
         padding-left: 1.4rem;
         margin-bottom: 1rem;
       }
+
       .why-choose li::before {
         content: "✓";
         position: absolute;
         left: 0;
-        color: #1b4d3e;
+        color: var(--green);
         font-weight: bold;
       }
 
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        color: #1b4d3e;
-        margin-bottom: 2rem;
-      }
-      .grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        box-shadow: 0 3px 8px rgba(105, 104, 104, 0.05);
-        flex: 1 1 calc(33% - 2rem);
-        min-width: 250px;
-        text-align: center;
-      }
-      .card h3 {
-        margin-top: 0.8rem;
-        font-size: 1.1rem;
-      }
-      .card span {
-        font-size: 2rem;
-        display: block;
-      }
-      ul {
-        padding-left: 1.5rem;
-        line-height: 1.8;
-      }
+      /* FOOTER + OTHER */
       .testimonial {
         background: white;
         padding: 1.2rem;
@@ -208,12 +169,14 @@
         border-left: 4px solid var(--orange);
         margin-top: 1rem;
       }
+
       .footer {
         background: var(--green);
         color: white;
         text-align: center;
         padding: 2.5rem 1rem;
       }
+
       .footer .cta-buttons a {
         background: var(--orange);
         padding: 0.7rem 1.4rem;
@@ -225,22 +188,56 @@
         display: inline-block;
       }
 
+      /* MOBILE OVERRIDES */
       @media (max-width: 768px) {
-        .card {
-          flex: 1 1 100%;
+        .hero {
+          height: 480px;
+          padding-top: 5.5rem;
+          justify-content: center;
         }
+
+        .hero .hero-content {
+          background: rgba(46, 46, 46, 0.5);
+          padding: 2rem;
+          margin: 0 2rem;
+          border-radius: 12px;
+          max-width: 100%;
+          text-align: left;
+        }
+
         .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .hero .buttons {
+          flex-direction: column;
+        }
+
+        .hero .buttons a {
+          width: 100%;
+          text-align: center;
+        }
+
+        .service-card {
+          padding: 1.5rem 1rem;
+          border-radius: 14px;
+        }
+
+        .service-card span {
           font-size: 2rem;
         }
       }
     </style>
   </head>
   <body>
+    <!-- NAV -->
     <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm py-3">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="olivwintransporters.html"
-          >Olivwin Transporters</a
-        >
+        <a class="navbar-brand fw-bold" href="#">Olivwin Transporters</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -255,15 +252,14 @@
         >
           <ul class="navbar-nav gap-3">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Olivwin</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#about">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
             </li>
-            <li><a class="nav-link" href="#careers-apply">Careers</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#careers-apply">Careers</a>
+            </li>
             <li>
               <a class="btn btn-godwin px-4 py-2 fw-bold" href="#contact"
                 >Get In Touch</a
@@ -274,6 +270,7 @@
       </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
         <h1>Reliable. Safe. Always On Time.</h1>
@@ -287,53 +284,54 @@
         </div>
       </div>
     </section>
-    <section id="services">
+
+    <!-- SERVICES -->
+    <section id="services" class="services-section">
       <div class="container py-5">
         <div class="row align-items-start">
-          <!-- Left: Services -->
           <div class="col-lg-8">
             <h2 class="section-title">Our Services</h2>
             <div class="row g-4">
               <div class="col-12 col-md-4">
-                <div class="service-card h-100 text-center">
-                  <span style="font-size: 2rem">🚐</span>
+                <div class="service-card h-100">
+                  <span>🚐</span>
                   <h5>Daily Town Rides</h5>
                 </div>
               </div>
               <div class="col-12 col-md-4">
-                <div class="service-card h-100 text-center">
-                  <span style="font-size: 2rem">✈️</span>
+                <div class="service-card h-100">
+                  <span>✈️</span>
                   <h5>Airport Pickup</h5>
                 </div>
               </div>
               <div class="col-12 col-md-4">
-                <div class="service-card h-100 text-center">
-                  <span style="font-size: 2rem">🏫</span>
+                <div class="service-card h-100">
+                  <span>🏫</span>
                   <h5>School Transport</h5>
                 </div>
               </div>
               <div class="col-12 col-md-4">
-                <div class="service-card h-100 text-center">
-                  <span style="font-size: 2rem">📦</span>
+                <div class="service-card h-100">
+                  <span>📦</span>
                   <h5>Parcel Delivery</h5>
                 </div>
               </div>
               <div class="col-12 col-md-4">
-                <div class="service-card h-100 text-center">
-                  <span style="font-size: 2rem">👔</span>
+                <div class="service-card h-100">
+                  <span>👔</span>
                   <h5>Corporate Staff Transport</h5>
                 </div>
               </div>
               <div class="col-12 col-md-4">
-                <div class="service-card h-100 text-center">
-                  <span style="font-size: 2rem">🛵</span>
+                <div class="service-card h-100">
+                  <span>🛵</span>
                   <h5>Boda-boda & Special Hire</h5>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Right: Why Choose Us -->
+          <!-- WHY CHOOSE US -->
           <div
             class="col-lg-4 ps-lg-5 text-center text-lg-start mx-lg-0"
             style="margin-top: 5rem"
@@ -351,6 +349,7 @@
       </div>
     </section>
 
+    <!-- TESTIMONIAL -->
     <section class="section">
       <h2>Customer Testimonials</h2>
       <div class="testimonial">
@@ -359,6 +358,7 @@
       </div>
     </section>
 
+    <!-- PARTNER -->
     <section class="section">
       <h2>Become a Partner or Driver</h2>
       <p>
@@ -367,11 +367,13 @@
       </p>
     </section>
 
+    <!-- COVERAGE -->
     <section class="section">
       <h2>Our Coverage Area</h2>
       <p>Bwera, Kasese, Fort Portal, and more coming soon!</p>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <h2>Need a ride? We’re just one click away.</h2>
       <div class="cta-buttons">
@@ -380,6 +382,8 @@
         <a href="#">WhatsApp Support</a>
       </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

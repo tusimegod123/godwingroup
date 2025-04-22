@@ -18,8 +18,8 @@
   <body>
     <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm py-3">
       <div class="container">
-        <a class="navbar-brand fw-bold " href="index.html"
-          >Olivwin</a
+        <a class="navbar-brand fw-bold " href="laclasssalon.html"
+          >LaClass Salon</a
         >
         <button
           class="navbar-toggler"
@@ -35,12 +35,15 @@
         >
           <ul class="navbar-nav gap-3">
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#about">About Us</a>
+              <a class="nav-link" href="index.html">Olivwin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" href="#services">Services</a>
+              <a class="nav-link " href="#about">About Us</a>
             </li>
-            <li>       <a class="nav-link text-dark" href="#careers-apply"
+            <li class="nav-item">
+              <a class="nav-link " href="#services">Services</a>
+            </li>
+            <li>       <a class="nav-link " href="#careers-apply"
               >Careers</a
             ></li>
             <li>        <a class="btn btn-godwin px-4 py-2 fw-bold" href="#contact"
@@ -81,7 +84,30 @@
       </div>
     </section>
     <!-- About Us Section -->
-<section id="about" class="container py-5 text-center fade-in-up">
+    <section id="about" class="container py-5 fade-in-up">
+      <div class="row align-items-center">
+   
+        <div class="col-md-6">
+          <h2 class="section-title mb-3 text-center text-md-start">About LaClass Salon</h2>
+          <p class="mx-auto" style="max-width: 750px; font-size: 1.1rem; line-height: 1.8;">
+            At <strong>LaClass Salon</strong>, beauty isn’t just about appearance—it's about confidence, self-expression, and care. 
+            Since our founding, we’ve served clients with precision and passion, offering top-tier hair, beauty, and grooming 
+            services that leave you glowing from the inside out.
+          </p>
+        
+          <p class="mx-auto mt-3" style="max-width: 750px; font-size: 1.05rem;">
+            From everyday glam to bridal transformations, our stylists and skincare specialists are committed to delivering 
+            excellence in every touch. We use premium products, personalized techniques, and a whole lot of love—because at LaClass, 
+            <em>you don’t just walk in for beauty, you leave with confidence.</em>
+          </p>
+        </div>
+        <div class="col-md-6 mb-4 mb-md-0">
+          <img src="images/laclass-bg-mobile.png" alt="LaClass Experience" class="img-fluid rounded shadow" />
+        </div>
+      </div>
+    </section>
+    
+<!-- <section id="about" class="container py-5 text-center fade-in-up">
   <h2 class="section-title mb-4">About LaClass Salon</h2>
 
   <p class="mx-auto" style="max-width: 750px; font-size: 1.1rem; line-height: 1.8;">
@@ -96,11 +122,11 @@
     <em>you don’t just walk in for beauty, you leave with confidence.</em>
   </p>
 
-  <!-- Optional Image (Style Tip: Place something natural, modern, warm-toned) -->
+ 
   <div class="mt-5 about-us-image">
     <img src="images/laclass-bg-mobile.png" alt="LaClass Experience" class="img-fluid rounded shadow" style="max-width: 650px;">
   </div>
-</section>
+</section> -->
 
     <section id="video" class="container py-5 fade-in-up">
       <h2 class="text-center mb-4">A Glimpse into LaClass Beauty</h2>
@@ -514,5 +540,20 @@
       // Dynamically set copyright year
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll('.navbar-collapse .nav-link');
+        const navbarCollapse = document.getElementById('navbarNav');
+    
+        navLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            if (window.innerWidth < 992) {
+              new bootstrap.Collapse(navbarCollapse).hide();
+            }
+          });
+        });
+      });
+    </script>
+    
   </body>
 </html>

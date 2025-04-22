@@ -8,7 +8,7 @@ body {
 h1, h2, h3 {
   font-family: "Playfair Display", serif;
 }
-.navbar-brand{
+.navbar-brand, .nav-link{
   color: #1b4d3e;
 }
 .laclass-hero {

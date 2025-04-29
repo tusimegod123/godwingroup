@@ -103,6 +103,17 @@
                 >Contact</a
               >
             </li>
+            <!-- Cart with Badge -->
+            <li class="nav-item position-relative">
+              <a href="#" class="nav-link fw-medium">
+                <i class="bi bi-cart"></i> Cart
+                <span
+                  id="cart-count"
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                  >0</span
+                >
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -165,28 +176,102 @@
 
     <!-- Services -->
     <section id="services" class="container py-5 text-center">
-      <h2 class="section-title mb-4">Our Services</h2>
+      <h2 class="section-title mb-4" data-aos="fade-down">Our Services</h2>
       <div class="row row-cols-1 row-cols-md-4 g-4">
+        <!-- Software Development -->
         <div class="col">
-          <div class="card h-100 shadow-sm p-3">
+          <div
+            class="card service-card h-100 shadow-sm p-4 text-center"
+            data-aos="fade-up"
+          >
+            <div class="mb-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="#1b4d3e"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.719 4.032a.5.5 0 0 1 .032.707L2.707 8l3.044 3.26a.5.5 0 1 1-.74.676l-3.5-3.75a.5.5 0 0 1 0-.672l3.5-3.75a.5.5 0 0 1 .707-.032zm4.562 0a.5.5 0 0 0-.032.707L13.293 8l-3.044 3.26a.5.5 0 1 0 .74.676l3.5-3.75a.5.5 0 0 0 0-.672l-3.5-3.75a.5.5 0 0 0-.707-.032z"
+                />
+              </svg>
+            </div>
             <h5 class="fw-bold">Software Development</h5>
             <p>Web, mobile, and enterprise apps crafted for growth.</p>
           </div>
         </div>
+
+        <!-- Cloud Solutions -->
         <div class="col">
-          <div class="card h-100 shadow-sm p-3">
+          <div
+            class="card service-card h-100 shadow-sm p-4 text-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="mb-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="#1b4d3e"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4.406 4.342a5.53 5.53 0 0 1 10.07 2.474 3.5 3.5 0 1 1-1.287 6.84H4a4 4 0 0 1 .406-9.314z"
+                />
+              </svg>
+            </div>
             <h5 class="fw-bold">Cloud Solutions</h5>
             <p>Reliable infrastructure to scale your business needs.</p>
           </div>
         </div>
+
+        <!-- IT Consulting -->
         <div class="col">
-          <div class="card h-100 shadow-sm p-3">
+          <div
+            class="card service-card h-100 shadow-sm p-4 text-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="mb-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="#1b4d3e"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2 6a6 6 0 1 1 12 0c0 2.223-1.436 3.753-2.443 4.712a1.516 1.516 0 0 0-.484.898H6.927a1.516 1.516 0 0 0-.484-.898C3.436 9.753 2 8.223 2 6zm5.002 8a.999.999 0 0 0 1.996 0H7.002z"
+                />
+              </svg>
+            </div>
             <h5 class="fw-bold">IT Consulting</h5>
             <p>We guide digital strategies with efficiency and clarity.</p>
           </div>
         </div>
+
+        <!-- Tech Support -->
         <div class="col">
-          <div class="card h-100 shadow-sm p-3">
+          <div
+            class="card service-card h-100 shadow-sm p-4 text-center"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="mb-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                fill="#1b4d3e"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 1a7 7 0 0 0-7 7v4a2 2 0 0 0 2 2h1v-4H3V8a5 5 0 0 1 10 0v2h-1v4h1a2 2 0 0 0 2-2V8a7 7 0 0 0-7-7z"
+                />
+              </svg>
+            </div>
             <h5 class="fw-bold">Tech Support</h5>
             <p>Timely assistance and long-term IT maintenance.</p>
           </div>
@@ -194,68 +279,372 @@
       </div>
     </section>
 
-    <!-- Shop Preview -->
-    <section id="shop" class="container py-5 text-center">
+    <!-- Shop Section -->
+    <section
+      id="shop"
+      class="container py-5 text-center"
+      style="margin-top: 80px"
+    >
       <h2 class="section-title mb-4">Featured Products</h2>
-      <div class="row row-cols-1 row-cols-md-4 g-4">
-        <div class="col">
-          <div class="card h-100 shadow-sm">
+
+      <div id="product-grid" class="row row-cols-1 row-cols-md-4 g-4">
+        <!-- Product 1 -->
+        <div
+          class="col product-card-wrapper"
+          data-product='{
+          "title": "Smartphone X1",
+          "price": "$699",
+          "rating": 5,
+          "review": "Amazing camera and battery life!",
+          "images": ["/images/phone.jpg", "/images/phone2.jpg", "/images/phone3.jpg"],
+          "description": "A powerful smartphone with advanced AI camera and 128GB storage."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
             <img
               src="/images/phone.jpg"
               class="card-img-top product-img"
               alt="Phone"
+              loading="lazy"
             />
             <div class="card-body">
-              <h6 class="fw-bold">Smartphone X1</h6>
+              <h6 class="fw-bold">
+                Smartphone X1 <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </h6>
               <p class="mb-2">$699</p>
-              <a href="#" class="btn btn-olivwin w-100">Add to Cart</a>
+              <p class="small text-muted">"Amazing camera and battery life!"</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
+
+        <!-- Product 2 -->
+        <div
+          class="col product-card-wrapper"
+          data-product='{
+          "title": "Laptop Pro 15\"",
+          "price": "$999",
+          "rating": 4,
+          "review": "Perfect for work and design.",
+          "images": ["/images/laptop.jpg"],
+          "description": "15-inch laptop with sleek design, fast SSD and 16GB RAM."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
             <img
-              src="images/laptop.jpg"
+              src="/images/laptop.jpg"
               class="card-img-top product-img"
               alt="Laptop"
+              loading="lazy"
             />
             <div class="card-body">
-              <h6 class="fw-bold">Laptop Pro 15"</h6>
+              <h6 class="fw-bold">
+                Laptop Pro 15" <span class="text-warning">⭐⭐⭐⭐</span>
+              </h6>
               <p class="mb-2">$999</p>
-              <a href="#" class="btn btn-outline-olivwin w-100">View</a>
+              <p class="small text-muted">"Perfect for work and design."</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
+
+        <!-- Product 3 -->
+        <div
+          class="col product-card-wrapper"
+          data-product='{
+          "title": "Smart TV 55”",
+          "price": "$849",
+          "rating": 5,
+          "review": "Crisp and vibrant screen quality!",
+          "images": ["/images/tv.jpg"],
+          "description": "55-inch 4K UHD TV with smart features and voice control."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
             <img
               src="/images/tv.jpg"
               class="card-img-top product-img"
               alt="TV"
+              loading="lazy"
             />
             <div class="card-body">
-              <h6 class="fw-bold">Smart TV 55”</h6>
+              <h6 class="fw-bold">
+                Smart TV 55” <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </h6>
               <p class="mb-2">$849</p>
-              <a href="#" class="btn btn-olivwin w-100">Add to Cart</a>
+              <p class="small text-muted">
+                "Crisp and vibrant screen quality!"
+              </p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100 shadow-sm">
+
+        <!-- Product 4 -->
+        <div
+          class="col product-card-wrapper"
+          data-product='{
+          "title": "Wireless Headphones",
+          "price": "$199",
+          "rating": 4,
+          "review": "Great sound, comfy fit.",
+          "images": ["/images/headsets.jpg"],
+          "description": "Noise-cancelling over-ear headphones with 40hr battery."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
             <img
               src="/images/headsets.jpg"
               class="card-img-top product-img"
               alt="Headphones"
+              loading="lazy"
             />
             <div class="card-body">
-              <h6 class="fw-bold">Wireless Headphones</h6>
+              <h6 class="fw-bold">
+                Wireless Headphones <span class="text-warning">⭐⭐⭐⭐</span>
+              </h6>
               <p class="mb-2">$199</p>
-              <a href="#" class="btn btn-outline-olivwin w-100">View</a>
+              <p class="small text-muted">"Great sound, comfy fit."</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 (Hidden) -->
+        <div
+          class="col product-card-wrapper d-none"
+          data-product='{
+          "title": "Smartphone Z5",
+          "price": "$749",
+          "rating": 5,
+          "review": "So fast and stylish!",
+          "images": ["/images/phone.jpg"],
+          "description": "Flagship smartphone with OLED display and fast charging."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
+            <img
+              src="/images/phone.jpg"
+              class="card-img-top product-img"
+              alt="Smartphone Z5"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h6 class="fw-bold">
+                Smartphone Z5 <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </h6>
+              <p class="mb-2">$749</p>
+              <p class="small text-muted">"So fast and stylish!"</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 (Hidden) -->
+        <div
+          class="col product-card-wrapper d-none"
+          data-product='{
+          "title": "Laptop Max 17\"",
+          "price": "$1299",
+          "rating": 5,
+          "review": "Handles everything!",
+          "images": ["/images/laptop.jpg"],
+          "description": "Large-screen 17-inch laptop with Intel i9 and 32GB RAM."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
+            <img
+              src="/images/laptop.jpg"
+              class="card-img-top product-img"
+              alt="Laptop Max"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h6 class="fw-bold">
+                Laptop Max 17" <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </h6>
+              <p class="mb-2">$1299</p>
+              <p class="small text-muted">"Handles everything!"</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7 (Hidden) -->
+        <div
+          class="col product-card-wrapper d-none"
+          data-product='{
+          "title": "Ultra HD TV 65”",
+          "price": "$1199",
+          "rating": 5,
+          "review": "Absolutely stunning.",
+          "images": ["/images/tv.jpg"],
+          "description": "Massive 65-inch smart TV with Dolby Vision and HDR10+."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
+            <img
+              src="/images/tv.jpg"
+              class="card-img-top product-img"
+              alt="TV 65"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h6 class="fw-bold">
+                Ultra HD TV 65” <span class="text-warning">⭐⭐⭐⭐⭐</span>
+              </h6>
+              <p class="mb-2">$1199</p>
+              <p class="small text-muted">"Absolutely stunning."</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 (Hidden) -->
+        <div
+          class="col product-card-wrapper d-none"
+          data-product='{
+          "title": "Studio Headphones",
+          "price": "$249",
+          "rating": 4,
+          "review": "Balanced and rich sound.",
+          "images": ["/images/headsets.jpg"],
+          "description": "Studio-grade headphones with detachable cable and mic."
+        }'
+        >
+          <div class="card product-card h-100 p-3 text-center">
+            <img
+              src="/images/headsets.jpg"
+              class="card-img-top product-img"
+              alt="Studio Headphones"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h6 class="fw-bold">
+                Studio Headphones <span class="text-warning">⭐⭐⭐⭐</span>
+              </h6>
+              <p class="mb-2">$249</p>
+              <p class="small text-muted">"Balanced and rich sound."</p>
+              <div class="d-grid gap-2">
+                <button class="btn btn-olivwin view-details">
+                  View Details
+                </button>
+                <button class="btn btn-outline-olivwin add-to-cart">
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <button id="toggleBtn" class="btn btn-outline-olivwin mt-4 px-4 py-2">
+        Load More
+      </button>
     </section>
+
+    <!-- Quick View Modal -->
+    <div
+      class="modal fade"
+      id="quickViewModal"
+      tabindex="-1"
+      aria-labelledby="quickViewModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="quickViewModalLabel">
+              Product Preview
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <div
+              id="productCarousel"
+              class="carousel slide mb-4"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" id="carouselInner"></div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#productCarousel"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#productCarousel"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            <div
+              class="d-flex justify-content-center gap-2 mb-4"
+              id="carouselThumbs"
+            ></div>
+            <p id="modalDescription" class="lead"></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Join Our Tech Team Section -->
     <section
@@ -486,6 +875,160 @@
             }, 1200);
           });
         });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(
+          ".navbar-collapse .nav-link"
+        );
+        const navbarCollapse = document.querySelector(".navbar-collapse");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false,
+            });
+            bsCollapse.hide(); // Collapses the navbar
+          });
+        });
+      });
+    </script>
+    <!-- JS for Modal, Carousel, and Load More -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggleBtn");
+        const hiddenCards = document.querySelectorAll(
+          ".product-card-wrapper.d-none"
+        );
+        const viewBtns = document.querySelectorAll(".view-details");
+
+        // Toggle Load More / Show Less
+        toggleBtn.addEventListener("click", () => {
+          hiddenCards.forEach((card) => card.classList.toggle("d-none"));
+          toggleBtn.innerText =
+            toggleBtn.innerText === "Load More" ? "Show Less" : "Load More";
+        });
+
+        // View Details: Load Modal Content
+        viewBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const card = this.closest(".product-card-wrapper");
+            const data = JSON.parse(card.getAttribute("data-product"));
+
+            document.getElementById("quickViewModalLabel").innerText =
+              data.title;
+            document.getElementById("modalDescription").innerText =
+              data.description;
+
+            const carouselInner = document.getElementById("carouselInner");
+            const carouselThumbs = document.getElementById("carouselThumbs");
+            carouselInner.innerHTML = "";
+            carouselThumbs.innerHTML = "";
+
+            data.images.forEach((img, i) => {
+              const item = document.createElement("div");
+              item.className = "carousel-item" + (i === 0 ? " active" : "");
+              item.innerHTML = `<img src="${img}" class="d-block w-100 rounded" alt="${data.title}">`;
+              carouselInner.appendChild(item);
+
+              const thumb = document.createElement("img");
+              thumb.src = img;
+              thumb.alt = data.title + " thumb";
+              thumb.className = "rounded border border-light";
+              thumb.style = "height:60px; cursor:pointer;";
+              thumb.onclick = () => {
+                const carousel = new bootstrap.Carousel(
+                  document.getElementById("productCarousel")
+                );
+                carousel.to(i);
+              };
+              carouselThumbs.appendChild(thumb);
+            });
+
+            new bootstrap.Modal(
+              document.getElementById("quickViewModal")
+            ).show();
+          });
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggleBtn");
+        const hiddenCards = document.querySelectorAll(
+          ".product-card-wrapper.d-none"
+        );
+        const viewBtns = document.querySelectorAll(".view-details");
+        const cartBtns = document.querySelectorAll(".add-to-cart");
+        const cartCount = document.getElementById("cart-count");
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        updateCartCount();
+
+        toggleBtn.addEventListener("click", () => {
+          hiddenCards.forEach((card) => card.classList.toggle("d-none"));
+          toggleBtn.innerText =
+            toggleBtn.innerText === "Load More" ? "Show Less" : "Load More";
+        });
+
+        viewBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            const card = this.closest(".product-card-wrapper");
+            const data = JSON.parse(card.getAttribute("data-product"));
+
+            document.getElementById("quickViewModalLabel").innerText =
+              data.title;
+            document.getElementById("modalDescription").innerText =
+              data.description;
+
+            const carouselInner = document.getElementById("carouselInner");
+            const carouselThumbs = document.getElementById("carouselThumbs");
+            carouselInner.innerHTML = "";
+            carouselThumbs.innerHTML = "";
+
+            data.images.forEach((img, i) => {
+              const item = document.createElement("div");
+              item.className = "carousel-item" + (i === 0 ? " active" : "");
+              item.innerHTML = `<img src="${img}" class="d-block w-100 rounded" alt="${data.title}">`;
+              carouselInner.appendChild(item);
+
+              const thumb = document.createElement("img");
+              thumb.src = img;
+              thumb.className = "rounded border border-light";
+              thumb.style = "height:60px; cursor:pointer;";
+              thumb.onclick = () => {
+                const carousel = new bootstrap.Carousel(
+                  document.getElementById("productCarousel")
+                );
+                carousel.to(i);
+              };
+              carouselThumbs.appendChild(thumb);
+            });
+
+            new bootstrap.Modal(
+              document.getElementById("quickViewModal")
+            ).show();
+          });
+        });
+
+        cartBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const card = this.closest(".product-card-wrapper");
+            const data = JSON.parse(card.getAttribute("data-product"));
+            cart.push(data);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            alert(`✅ "${data.title}" added to cart!`);
+          });
+        });
+
+        function updateCartCount() {
+          cartCount.innerText = cart.length;
+        }
       });
     </script>
   </body>

@@ -902,21 +902,27 @@
           ".product-card-wrapper.d-none"
         );
         const viewBtns = document.querySelectorAll(".view-details");
+        const cartBtns = document.querySelectorAll(".add-to-cart");
+        const cartCount = document.getElementById("cart-count");
+        const modal = document.getElementById("quickViewModal");
+        let carouselInstance;
 
-        // Toggle Load More / Show Less
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        updateCartCount();
+
         toggleBtn.addEventListener("click", () => {
           hiddenCards.forEach((card) => card.classList.toggle("d-none"));
           toggleBtn.innerText =
             toggleBtn.innerText === "Load More" ? "Show Less" : "Load More";
         });
 
-        // View Details: Load Modal Content
         viewBtns.forEach((btn) => {
           btn.addEventListener("click", function (e) {
             e.preventDefault();
             const card = this.closest(".product-card-wrapper");
             const data = JSON.parse(card.getAttribute("data-product"));
 
+            // Populate modal title and description
             document.getElementById("quickViewModalLabel").innerText =
               data.title;
             document.getElementById("modalDescription").innerText =
@@ -939,80 +945,32 @@
               thumb.className = "rounded border border-light";
               thumb.style = "height:60px; cursor:pointer;";
               thumb.onclick = () => {
-                const carousel = new bootstrap.Carousel(
-                  document.getElementById("productCarousel")
-                );
-                carousel.to(i);
+                if (carouselInstance) carouselInstance.to(i);
               };
               carouselThumbs.appendChild(thumb);
             });
 
-            new bootstrap.Modal(
-              document.getElementById("quickViewModal")
-            ).show();
+            // Init or refresh carousel
+            const carouselElement = document.getElementById("productCarousel");
+            if (carouselInstance) carouselInstance.dispose();
+            carouselInstance = new bootstrap.Carousel(carouselElement);
+
+            new bootstrap.Modal(modal).show();
           });
         });
-      });
-    </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggleBtn = document.getElementById("toggleBtn");
-        const hiddenCards = document.querySelectorAll(
-          ".product-card-wrapper.d-none"
-        );
-        const viewBtns = document.querySelectorAll(".view-details");
-        const cartBtns = document.querySelectorAll(".add-to-cart");
-        const cartCount = document.getElementById("cart-count");
+        // Destroy carousel on modal hide
+        modal.addEventListener("hidden.bs.modal", function () {
+          const carouselInner = document.getElementById("carouselInner");
+          const carouselThumbs = document.getElementById("carouselThumbs");
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        updateCartCount();
+          carouselInner.innerHTML = "";
+          carouselThumbs.innerHTML = "";
 
-        toggleBtn.addEventListener("click", () => {
-          hiddenCards.forEach((card) => card.classList.toggle("d-none"));
-          toggleBtn.innerText =
-            toggleBtn.innerText === "Load More" ? "Show Less" : "Load More";
-        });
-
-        viewBtns.forEach((btn) => {
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            const card = this.closest(".product-card-wrapper");
-            const data = JSON.parse(card.getAttribute("data-product"));
-
-            document.getElementById("quickViewModalLabel").innerText =
-              data.title;
-            document.getElementById("modalDescription").innerText =
-              data.description;
-
-            const carouselInner = document.getElementById("carouselInner");
-            const carouselThumbs = document.getElementById("carouselThumbs");
-            carouselInner.innerHTML = "";
-            carouselThumbs.innerHTML = "";
-
-            data.images.forEach((img, i) => {
-              const item = document.createElement("div");
-              item.className = "carousel-item" + (i === 0 ? " active" : "");
-              item.innerHTML = `<img src="${img}" class="d-block w-100 rounded" alt="${data.title}">`;
-              carouselInner.appendChild(item);
-
-              const thumb = document.createElement("img");
-              thumb.src = img;
-              thumb.className = "rounded border border-light";
-              thumb.style = "height:60px; cursor:pointer;";
-              thumb.onclick = () => {
-                const carousel = new bootstrap.Carousel(
-                  document.getElementById("productCarousel")
-                );
-                carousel.to(i);
-              };
-              carouselThumbs.appendChild(thumb);
-            });
-
-            new bootstrap.Modal(
-              document.getElementById("quickViewModal")
-            ).show();
-          });
+          if (carouselInstance) {
+            carouselInstance.dispose();
+            carouselInstance = null;
+          }
         });
 
         cartBtns.forEach((btn) => {

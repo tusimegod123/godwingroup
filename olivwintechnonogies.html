@@ -118,7 +118,12 @@
         </div>
       </div>
     </nav>
-
+    <!-- Loader -->
+    <div id="loader">
+      <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
     <!-- Hero Section -->
     <!-- Hero Section -->
     <section class="hero d-flex align-items-center text-white">
@@ -1007,6 +1012,20 @@
         function updateCartCount() {
           cartCount.innerText = cart.length;
         }
+      });
+      // Loader
+      window.addEventListener("load", () => {
+        document.getElementById("loader").classList.add("hidden");
+
+        const galleryImages = document.querySelectorAll(".gallery-img");
+        const modalImage = document.getElementById("modalImage");
+
+        galleryImages.forEach((img) => {
+          img.addEventListener("click", () => {
+            const src = img.getAttribute("data-bs-img");
+            modalImage.src = src;
+          });
+        });
       });
     </script>
   </body>
